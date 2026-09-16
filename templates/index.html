@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <h1>AI Student Assistant</h1>
+
+        <p>Ask about admissions, courses, fees, internships & placements</p>
+
+        <div id="chat-box" class="chat-box">
+            <div class="bot-message">
+                <strong>AI:</strong> Hello! I am your AI Student Assistant. How can I help you?
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your question..."
+                autocomplete="off"
+            >
+
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById("user-input");
+            const chatBox = document.getElementById("chat-box");
+
+            const message = input.value.trim();
+
+            if (message === "") {
+                return;
+            }
+
+            // Show user message
+            chatBox.innerHTML += `
+                <div class="user-message">
+                    <strong>You:</strong> ${message}
+                </div>
+            `;
+
+            input.value = "";
+
+            // Send message to Flask
+            fetch("/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                chatBox.innerHTML += `
+                    <div class="bot-message">
+                        <strong>AI:</strong> ${data.reply}
+                    </div>
+                `;
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+            })
+            .catch(error => {
+                chatBox.innerHTML += `
+                    <div class="bot-message">
+                        <strong>AI:</strong> Sorry, something went wrong.
+                    </div>
+                `;
+
+                console.error(error);
+            });
+        }
+
+        // Press Enter to send
+        document.getElementById("user-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+    </script>
+
+</body>
+</html>

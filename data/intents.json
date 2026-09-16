@@ -1,0 +1,164 @@
+[
+  {
+    "intent": "admission",
+    "patterns": [
+      "What is the admission process?",
+      "How can I apply for admission?",
+      "How do I apply for admission?",
+      "How can I get admission?",
+      "What are the admission procedures?",
+      "How can I join the college?",
+      "When does admission start?",
+      "What documents are required for admission?",
+      "How do I take admission?",
+      "What is the procedure to join?",
+      "How do I get into the college?",
+      "Can I apply for admission online?",
+      "Where can I apply for admission?",
+      "What are the admission requirements?",
+      "What documents do I need for admission?"
+    ],
+    "responses": [
+      "You can apply through the college admission portal. Keep your academic certificates, ID proof and photographs ready."
+    ]
+  },
+  {
+    "intent": "courses",
+    "patterns": [
+      "What courses are available?",
+      "Which courses are available?",
+      "What courses do you offer?",
+      "Which branches are available?",
+      "What programs are offered?",
+      "Tell me about the courses",
+      "What degree programs are available?",
+      "Which programs can I study?",
+      "What can I study in this college?",
+      "Which degree courses are offered?",
+      "What branches does the college offer?",
+      "Tell me the available programs"
+    ],
+    "responses": [
+      "The college offers undergraduate and postgraduate programs in different disciplines. Please check the latest college prospectus for the current course list."
+    ]
+  },
+  {
+    "intent": "fees",
+    "patterns": [
+      "What is the fee structure?",
+      "How much is the college fee?",
+      "What are the course fees?",
+      "How much are the fees?",
+      "Tell me about fees",
+      "What is the tuition fee?",
+      "How can I pay my fees?",
+      "What is the fee for the course?",
+      "How much is the tuition?",
+      "What are the college fees?",
+      "Tell me the fee details",
+      "How do I pay the college fee?"
+    ],
+    "responses": [
+      "Fee details depend on the course and category. Please refer to the official fee structure or contact the college office for the current amount."
+    ]
+  },
+  {
+    "intent": "internships",
+    "patterns": [
+      "Are internships available?",
+      "Does the college provide internships?",
+      "Does the college offer internships?",
+      "How can I get an internship?",
+      "Tell me about internships",
+      "Can students do internships?",
+      "Where can I apply for internships?",
+      "Are internship opportunities available?",
+      "How do I get an internship?",
+      "Does the college help with internships?",
+      "Can I do an internship?",
+      "Where can students find internships?"
+    ],
+    "responses": [
+      "Students can apply for internships through the college placement or training cell and external organizations. Eligibility and opportunities depend on the course and year."
+    ]
+  },
+  {
+    "intent": "placements",
+    "patterns": [
+      "Does the college provide placements?",
+      "Tell me about placements",
+      "Which companies visit the college?",
+      "How can I get placement?",
+      "What is the placement process?",
+      "Are placements available?",
+      "Does the college have campus placements?",
+      "How do students get placed?",
+      "Which companies offer jobs?",
+      "Does the college provide campus placements?",
+      "What companies recruit students?",
+      "How does the placement process work?",
+      "Can students get jobs after completing their course?",
+      "Will I get a job after graduation?",
+      "Does the college help students find jobs?",
+      "What happens after completing the course?",
+      "How can students get placed?",
+      "Does the college have campus placements?",
+      "Can I get a job through the college?",
+      "Does the college help graduates get jobs?",
+      "Are job opportunities available for students?",
+      "Can I get placed after graduation?",
+      "Does the college provide job opportunities?",
+      "Will the college help me get a job?"
+    ],
+    "responses": [
+      "The placement cell supports students through training, aptitude tests, technical rounds and interviews. Company participation and packages vary by recruitment cycle."
+    ]
+  },
+  {
+    "intent": "greeting",
+    "patterns": [
+      "Hi",
+      "Hello",
+      "Hey",
+      "Good morning",
+      "Good afternoon",
+      "Good evening",
+      "Hi chatbot",
+      "Hello chatbot",
+      "Hey chatbot"
+    ],
+    "responses": [
+      "Hello! I am the AI Student Assistant. You can ask me about admissions, courses, fees, internships or placements."
+    ]
+  },
+  {
+    "intent": "thanks",
+    "patterns": [
+      "Thank you",
+      "Thanks",
+      "Thanks a lot",
+      "Thank you so much",
+      "That was helpful",
+      "Thank you chatbot",
+      "Thanks for helping"
+    ],
+    "responses": [
+      "You're welcome! Feel free to ask another question."
+    ]
+  },
+  {
+    "intent": "goodbye",
+    "patterns": [
+      "Bye",
+      "Goodbye",
+      "See you",
+      "Exit",
+      "See you later",
+      "Bye chatbot",
+      "Goodbye chatbot"
+    ],
+    "responses": [
+      "Goodbye! Best wishes for your studies and career."
+    ]
+  }
+]
