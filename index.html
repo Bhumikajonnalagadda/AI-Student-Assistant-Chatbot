@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Assistant</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eaf2f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1f3c88;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 17px;
+        }
+
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #d6e0ea;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            background: #f8fbff;
+        }
+
+        .user-message,
+        .bot-message {
+            padding: 10px 14px;
+            margin: 10px 0;
+            border-radius: 12px;
+        }
+
+        .user-message {
+            text-align: right;
+            background: #dbeafe;
+            margin-left: 30%;
+        }
+
+        .bot-message {
+            background: #eeeeee;
+            margin-right: 30%;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100px;
+            border: none;
+            border-radius: 8px;
+            background: #1976d2;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #125ca3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <h1>AI Student Assistant</h1>
+
+    <p class="subtitle">
+        Ask about admissions, courses, fees, internships & placements
+    </p>
+
+    <div id="chat-box" class="chat-box">
+        <div class="bot-message">
+            <strong>AI:</strong>
+            Hello! I am your AI Student Assistant. How can I help you?
+        </div>
+    </div>
+
+    <div class="input-area">
+        <input
+            type="text"
+            id="user-input"
+            placeholder="Type your question..."
+            autocomplete="off"
+        >
+
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script>
+
+function getResponse(message) {
+
+    const text = message.toLowerCase();
+
+    if (
+        text.includes("hello") ||
+        text.includes("hi") ||
+        text.includes("hey")
+    ) {
+        return "Hello! How can I help you with admissions, courses, fees, internships or placements?";
+    }
+
+    if (
+        text.includes("admission") ||
+        text.includes("join") ||
+        text.includes("apply")
+    ) {
+        return "You can apply through the college admission portal. Keep your academic certificates, ID proof and photographs ready.";
+    }
+
+    if (
+        text.includes("course") ||
+        text.includes("program") ||
+        text.includes("branch")
+    ) {
+        return "The college offers undergraduate and postgraduate programs. Please check the college admission information for the available courses.";
+    }
+
+    if (
+        text.includes("fee") ||
+        text.includes("fees") ||
+        text.includes("cost")
+    ) {
+        return "Fee details depend on the course and category. Please check the college fee information for the latest details.";
+    }
+
+    if (
+        text.includes("internship") ||
+        text.includes("internships")
+    ) {
+        return "Internships may be available through the placement and training cell and external organizations. Opportunities depend on the course and year.";
+    }
+
+    if (
+        text.includes("placement") ||
+        text.includes("job") ||
+        text.includes("jobs") ||
+        text.includes("placed") ||
+        text.includes("career")
+    ) {
+        return "The placement cell supports students through training, aptitude tests, technical rounds and interviews. Company participation and packages vary by recruitment cycle.";
+    }
+
+    if (
+        text.includes("thank") ||
+        text.includes("thanks")
+    ) {
+        return "You're welcome! 😊";
+    }
+
+    if (
+        text.includes("bye") ||
+        text.includes("goodbye")
+    ) {
+        return "Goodbye! All the best for your studies and career! 😊";
+    }
+
+    return "Sorry, I don't understand that question yet. Please ask about admissions, courses, fees, internships or placements.";
+}
+
+
+function sendMessage() {
+
+    const input = document.getElementById("user-input");
+    const chatBox = document.getElementById("chat-box");
+
+    const message = input.value.trim();
+
+    if (message === "") {
+        return;
+    }
+
+    chatBox.innerHTML += `
+        <div class="user-message">
+            <strong>You:</strong> ${message}
+        </div>
+    `;
+
+    const reply = getResponse(message);
+
+    chatBox.innerHTML += `
+        <div class="bot-message">
+            <strong>AI:</strong> ${reply}
+        </div>
+    `;
+
+    input.value = "";
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+
+document.getElementById("user-input").addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
