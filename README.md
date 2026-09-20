@@ -1,9 +1,11 @@
-AI Student Assistant Chatbot
+# AI Student Assistant Chatbot
 
-Project Overview
+## Project Overview
+
 AI Student Assistant is an NLP-based chatbot designed to answer common student queries related to college admissions, courses, fees, internships, and placements.
 
-Features
+## Features
+
 - Admission-related queries
 - Course and program information
 - Fee-related queries
@@ -12,7 +14,8 @@ Features
 - Greeting, thanks, and goodbye responses
 - Unknown-question handling
 
-Technologies Used
+## Technologies Used
+
 - Python
 - Flask
 - Natural Language Processing (NLP)
@@ -22,20 +25,22 @@ Technologies Used
 - CSS
 - JavaScript
 
-How It Works
+## How It Works
+
 1. User enters a question in the chatbot interface.
 2. The question is converted into TF-IDF features.
 3. The Logistic Regression model predicts the user's intent.
 4. The chatbot selects an appropriate response.
 5. If the confidence is too low, the chatbot returns an unknown-question message.
 
-Project Structure
+## Project Structure
+
 AI_Student_Chatbot_Project
 │
 ├── app.py
 ├── requirements.txt
 ├── .gitignore
-├── README.txt
+├── README.md
 │
 ├── data
 │   └── intents.json
@@ -46,7 +51,8 @@ AI_Student_Chatbot_Project
 └── templates
     └── index.html
 
-How to Run
+## How to Run
+
 1. Install Python.
 2. Open the project folder in VS Code.
 3. Open the terminal.
@@ -62,8 +68,10 @@ python app.py
 
 http://127.0.0.1:5000
 
-Testing
+## Testing
+
 The chatbot was tested with questions related to:
+
 - Admissions
 - Courses
 - Fees
@@ -73,5 +81,14 @@ The chatbot was tested with questions related to:
 - Greetings and general conversation
 - Unrelated questions
 
-Project Status
-Minor Project - Completedkk
+## Live Demo
+
+[Click here to view the AI Student Assistant Chatbot](https://bhumikajonnalagadda.github.io/AI-Student-Assistant-Chatbot/)
+
+## GitHub Repository
+
+[View the project source code on GitHub](https://github.com/Bhumikajonnalagadda/AI-Student-Assistant-Chatbot)
+
+## Project Status
+
+**Minor Project - Completed**
